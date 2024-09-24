@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>sound</title>
+
+	<style type="text/css">
+			#left{width: 100vw; height: 10vw; background: url(person.png); background-size: 10vw auto;
+			    animation: shift 6s infinite linear;}
+			@keyframes shift{
+				from{background-position: 0 0;}
+				to{background-position: -100vw 0;}
+			}
+		body {
+			height: 100vh;
+			background-image: url('back.jpg'); /* Ensure this path is correct */
+			background-size: cover;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="left"></div>
+	<h1 style="font-size: 50px ; color: white; text-align: center;">SOUND OF PAPER</h1>
+	<hr>
+	<p style="font-size: 15px ; color: white; text-align: center;">종이를 클릭해 소리를 들어보세요.</p>
+
+<br>
+<br>
+<br>
+<br>
+
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img id="boat" src="boat.png" width="300">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<img id="play" src="pp1.png" width="280">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<img id="handwash" src="pp2.png" width="300">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<img id="rock" src="pp3.png" width="300">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<img id="pingpong" src="pp4.png" width="300">
+
+
+	<script type="text/javascript">
+
+
+		let boatSound = new Audio('Stirring Liquid in Glass.mp3');
+		let playSound = new Audio('Kids Playing.mp3');
+		let handwashSound = new Audio('Wash Hands Running Water.mp3');
+		let rockSound = new Audio('Walk on Rocks.mp3');
+		let pingpongSound = new Audio('Ping Pong Serve and Volley.mp3');
+
+
+		function toggleSound(audio) {
+			if (audio.paused) {
+				audio.play();
+			} else {
+				audio.pause();
+			}
+		}
+
+
+		let boat = document.getElementById('boat');
+		let boatState = false;
+		boat.onclick = function () {
+			toggleSound(boatSound); 
+			if (!boatState) {
+				boat.src = "glass.png";
+				boatState = true;
+			} else {
+				boat.src = "boat.png";
+				boatState = false;
+			}
+		}
+
+
+		let play = document.getElementById('play');
+		let playState = false;
+		play.onclick = function () {
+			toggleSound(playSound);  
+			if (!playState) {
+				play.src = "children.png";
+				playState = true;
+			} else {
+				play.src = "pp1.png";
+				playState = false;
+			}
+		}
+
+
+		let handwash = document.getElementById('handwash');
+		let handwashState = false;
+		handwash.onclick = function () {
+			toggleSound(handwashSound); 
+			if (!handwashState) {
+				handwash.src = "handwash.png";
+				handwashState = true;
+			} else {
+				handwash.src = "pp2.png";
+				handwashState = false;
+			}
+		}
+
+		
+
+		let rock = document.getElementById('rock');
+		let rockState = false;
+		rock.onclick = function () {
+			toggleSound(rockSound);  
+			if (!rockState) {
+				rock.src = "rock.png";
+				rockState = true;
+			} else {
+				rock.src = "pp3.png";
+				rockState = false;
+			}
+		}
+
+
+		
+		let pingpong = document.getElementById('pingpong');
+		let pingpongState = false;
+		pingpong.onclick = function () {
+			toggleSound(pingpongSound);  
+			if (!pingpongState) {
+				pingpong.src = "pingpong.png";
+				pingpongState = true;
+			} else {
+				pingpong.src = "pp4.png";
+				pingpongState = false;
+			}
+		}
+
+	</script>
+	<br>
+	<div id="left"></div>
+</body>
+</html>
